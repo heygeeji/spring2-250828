@@ -1,10 +1,18 @@
 package com.back;
 
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class PersonService {
+
+    private final PersonRepository personRepository;
+
+    public PersonService(@Qualifier("personRepository") PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
+
     public int count() {
-        return 3;
+        return personRepository.count();
     }
 }
