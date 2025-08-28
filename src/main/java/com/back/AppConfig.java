@@ -21,4 +21,9 @@ public class AppConfig {
     public PersonRepository personRepositoryV2() {
         return new PersonRepository(3);
     }
+
+//    public ApplicationRunner myApplicationRunner() { // 리턴타입이 이렇다는건 이런객체가 있으면 스프링부한테 빈으로 등록하라는 것
+//        return new ApplicationRunner();
+//    }
+
 }
